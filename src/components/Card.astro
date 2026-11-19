@@ -1,0 +1,12 @@
+---
+const { title, imageSrc, imageAlt, description, toolUrl } = Astro.props;
+---
+<article class="card">
+    <img src={imageSrc} alt={imageAlt} loading="lazy" />
+    <div class="card-body">
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <!-- Atributos aria para mejorar la lectura en dispositivos de apoyo -->
+        <a href={toolUrl} aria-label={`Conocer más sobre ${title}`}>Explorar herramienta</a>
+    </div>
+</article>

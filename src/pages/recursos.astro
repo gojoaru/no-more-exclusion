@@ -1,0 +1,176 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+// Datos de recursos interactivos con imágenes
+const herramientasDestacadas = [
+    {
+        title: "WAVE Web Accessibility Tool",
+        imageSrc: "/images/wave-tool.jpg",
+        imageAlt:
+            "Interfaz de la herramienta de evaluación de accesibilidad web WAVE",
+        description:
+            "Evaluador visual que identifica errores de contraste, etiquetas faltantes y estructura semántica directamente sobre tu sitio web.",
+        toolUrl: "https://wave.webaim.org/",
+    },
+    {
+        title: "WebAIM Contrast Checker",
+        imageSrc: "/images/contrast-checker.jpg",
+        imageAlt:
+            "Demostración de cálculo de contraste de color entre texto y fondo",
+        description:
+            "Calculadora rápida de radio de contraste para verificar el cumplimiento de las pautas WCAG 2.1 y 2.2 en niveles AA y AAA.",
+        toolUrl: "https://webaim.org/resources/contrastchecker/",
+    },
+];
+
+// Datos de documentación y guías oficiales
+const guiasOficiales = [
+    {
+        titulo: "Pautas de Accesibilidad para el Contenido Web (WCAG 2.2)",
+        descripcion:
+            "Estándar técnico internacional del W3C que define cómo hacer que el contenido web sea accesible para personas con diversas discapacidades.",
+        enlace: "https://www.w3.org/TR/WCAG22/",
+    },
+    {
+        titulo: "Lector de Pantalla NVDA (NV Access)",
+        descripcion:
+            "Lector de pantalla gratuito y de código abierto para Windows que permite a personas ciegas o con baja visión utilizar computadoras.",
+        enlace: "https://www.nvaccess.org/",
+    },
+    {
+        titulo: "Patrones de Diseño W3C WAI-ARIA",
+        descripcion:
+            "Guía práctica con ejemplos de código accesible para construir componentes complejos como menús desplegables, modales y pestañas.",
+        enlace: "https://www.w3.org/WAI/ARIA/apg/",
+    },
+];
+---
+
+<Layout title="Recursos y Guías - No More Exclusion">
+    <main>
+        <header class="hero-container">
+            <h1>Recursos para la Inclusión Digital</h1>
+            <p>
+                Documentación técnica, herramientas de evaluación automática y
+                utilidades clave para diseñar y desarrollar sitios web sin
+                barreras de acceso.
+            </p>
+        </header>
+
+        <section aria-label="Herramientas principales de evaluación">
+            {
+                herramientasDestacadas.map((recurso) => (
+                    <Card
+                        title={recurso.title}
+                        imageSrc={recurso.imageSrc}
+                        imageAlt={recurso.imageAlt}
+                        description={recurso.description}
+                        toolUrl={recurso.toolUrl}
+                    />
+                ))
+            }
+        </section>
+
+        <section
+            class="guides-section"
+            aria-label="Documentación y guías oficiales"
+        >
+            <h2>Estándares y Documentación Recomendada</h2>
+            <div class="guides-grid">
+                {
+                    guiasOficiales.map((guia) => (
+                        <article class="guide-card">
+                            <h3>{guia.titulo}</h3>
+                            <p>{guia.descripcion}</p>
+                            <a
+                                href={guia.enlace}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Abrir sitio oficial de ${guia.titulo}`}
+                            >
+                                Consultar recurso &rarr;
+                            </a>
+                        </article>
+                    ))
+                }
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .guides-section {
+        margin-top: 3.5rem;
+    }
+
+    .guides-section h2 {
+        font-size: 1.75rem;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .guides-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-accent);
+        border-radius: 2px;
+    }
+
+    .guides-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .guide-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .guide-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .guide-card h3 {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+    }
+
+    .guide-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        flex: 1;
+    }
+
+    .guide-card a {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .guide-card a:hover {
+        color: var(--primary-hover);
+    }
+</style>

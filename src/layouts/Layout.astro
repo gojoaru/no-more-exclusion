@@ -1,0 +1,21 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <Navbar />
+        <!-- El slot inyecta el contenido específico de cada página (Inicio, Tema, Recursos) -->
+        <slot /> 
+        <Footer />
+    </body>
+</html>

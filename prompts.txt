@@ -1,0 +1,51 @@
+- Prompt 1
+{
+    "prompt": {
+        "context": "Quiero crear un página llamada 'No More Exclusion' con el framework Astro, así que el contenido se centrarse, ya que es una página de Presentación de herramientas tecnológicas que facilitan el acceso a la información y la participación de personas con discapacidad.",
+        "task": {
+            "Las siguientes indicaciones son:",
+            "En la carpeta `/pages` debemos tener al menos 3 páginas diferentes",
+            "Debe haber Inicio, Tecnología de apoyo, Aplicaciones y Recuersos",
+            "Debe tener Título, Presentación, Redes sociales y Disclaimer de Copyright",
+            "Debe implementar al menos 1 layout (en la carpeta `/layouts`)",
+            "Debe haber como al menos 4 componentes (de la carpeta `/components`) reutilizables",
+            "También debe haber versiones de adaptar el sitio a dispositivos móviles y computadores",
+            "Incorporar un menú de navegación funcional entre las 3 páginas",
+            "Utilizar etiquetas semánticas, textos alternativos en imágenes y colores que permitan una lectura adecuada"
+            },
+        "role": "Programador experto en Astro y CSS con años de experiencia",
+        "format": {
+            "global.css": [
+                "Uso de un archivo CSS global",
+                "Distribución de elementos mediante Flexbox o CSS Grid",
+                "Colores y tipografías consistentes",
+                "Márgenes, espaciados y dimensiones adecuados",
+                "Presentación visual ordenada",
+                "Enlaces de navegación visibles y funcionales"
+            ]
+        }
+    }
+}
+
+- Prompt 2
+La carpeta `/pages`, ahí debemos crear las páginas importantes antes en centrarse en lo visual
+
+- Prompt 3
+Ahora tenemos que crear el archivo `Layout.astro` junto con los otros: `Navbar` y `Footer`
+
+- Prompt 4
+Continuemos con la creación de los componentes reutilizables ´Hero.astro´ y ´Card.astro´, ya que son componentes que deben estar sí o sí
+
+- Prompt 5
+Ahora el archivo `global.css` debe tener un estilo profesional, organizado y accesible
+
+- Prompt 6
+Ajuste: debe ser un poco más profesional aunque sea accesible para cualquiera
+
+- Prompt 7
+Ahora un archivo llamado `no-generalization.astro`, diciendo que lo importante no es decir "AI slop" todo el rato siendo que hay que darle una segunda oportunidad
+
+- Prompt 8
+Ahora haga que el estilo tengan degradados
+
+- Prompt 9
